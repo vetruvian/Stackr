@@ -1,2 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="jumbotron">
+
+  <% if current_user %>
+
+  <h1 style="color:#000000">
+    <span style="color:#428DC8">Welcome Back!</span>
+  </h1>
+  <p>Select an option from the navigation bar above.</p>
+  <a class="btn btn-primary btn-lg" role="button" <%= link_to 'logout', destroy_user_session_path, method: :delete %>
+
+  <% else %>
+
+
+  
+  <h2>
+  	<span style="color:#000000">Welcome to </span>
+  	<span style="color:#428DC8">Stackr!</span>
+  </h2>
+  <br>
+  <p>A dynamic inventory application for your precious metals stack. New to Stackr? Click on the 'sign up' button below to get started!</p>
+  <p>
+  <a class="btn btn-primary btn-lg" role="button" <%= link_to 'login', new_user_session_path %>
+  <a class="btn btn-primary btn-lg" role="button" <%= link_to 'sign up', new_user_registration_path %>
+  </p>
+  <% end %>
+
+</div>
