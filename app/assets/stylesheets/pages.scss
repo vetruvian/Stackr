@@ -11,7 +11,7 @@
 
 // Set background image
 body {
-	background-image: image-url("background.jpg");
+	background-image: image-url(asset-path('background.jpg'));
 }
 
 
