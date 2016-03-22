@@ -12,7 +12,7 @@ module Stackr
   class Application < Rails::Application
 
     ## Heroku assets setting
-    config.serve_static_assets = true
+    config.serve_static_files = true
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
