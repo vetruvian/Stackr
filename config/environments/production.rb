@@ -1,6 +1,10 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  ##added for Heroku Background rendering
+  config.serve_static_assets = true
+  config.assets.compile = true
+
   ## Added for Heroku background image
   config.serve_static_assets = true
   config.assets.compile = true
