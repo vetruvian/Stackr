@@ -9,15 +9,17 @@
   <a class="btn btn-primary btn-lg" role="button" <%= link_to 'logout', destroy_user_session_path, method: :delete %>
 
   <% else %>
-
-
   
-  <h2>
+  <h1>
   	<span style="color:#000000">Welcome to </span>
   	<span style="color:#428DC8">Stackr!</span>
-  </h2>
+  </h1>
  
-  <p>A dynamic inventory application for your precious metals stack. Currently under development. Check back soon for updates!</p>
+  <p>A dynamic inventory application for your precious metals stack.</p>
+  <br>
+  <a class="btn btn-primary btn-lg" role="button" <%= link_to 'login', new_user_session_path %>
+  <a class="btn btn-primary btn-lg" role="button" <%= link_to 'signup', new_user_registration_path %>
+
   <% end %>
 
 </div>

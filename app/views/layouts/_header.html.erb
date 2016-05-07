@@ -10,12 +10,25 @@
       </button>
       <!-- Logo and Brand Icon -->
       <a class="navbar-brand" style="color:#428DC8; font-weight:bold;"><i class="fa fa-cubes" style="color:#000000"></i> Stackr</a>
+
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'about', about_path %> </li>
+      </ul>
+
       <!--Right Nav: login/register-->
       <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+           <li><%= link_to 'settings', edit_user_registration_path %> </li>          
+          <li><%= link_to 'logout', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'login', new_user_session_path %></li>
+          <li><%= link_to 'register', new_user_registration_path %></li>
+        <% end %>
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

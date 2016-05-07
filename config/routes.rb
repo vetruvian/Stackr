@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'about', to: 'about#home'
+
   # force devise to use registrations controller
   devise_for :users, controllers: { registrations: 'registrations'}
 
