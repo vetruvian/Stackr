@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   # re-routed application home page
   root 'pages#home'
+  get 'dashboard', to: 'pages#dashboard'
 
   # root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
