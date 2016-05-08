@@ -1,0 +1,46 @@
+<div class="jumbotron">
+
+<h1 style="color:#428DC8">Junk Silver Stack</h1>
+
+<div class="table-responsive">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Purchase Date</th>
+      <th>Quantity</th>
+      <th>Denomination</th>
+      <th>Silver Percentage</th>
+      <th>Weight (ozt)</th>
+      <th>Purchase Price</th>
+      <th>Spot at Purchase</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @junks.each do |junk| %>
+      <tr>
+        <td><%= junk.dateOfPurchase %></td>
+        <td><%= junk.quantity %></td>
+        <td><%= junk.name %></td>
+        <td><%= junk.silverPercentage %></td>
+        <td><%= junk.silverContent %></td>
+        <td>$ <%= junk.purchasePrice %></td>
+        <td>$ <%= junk.spotAtPurchase %></td>
+        <td><%= link_to 'Info', junk %></td>
+        <td><%= link_to 'Edit', edit_junk_path(junk) %></td>
+        <td><%= link_to 'Remove', junk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<% if current_user %>
+  <%= link_to 'Add Junk to Stack', new_junk_path %>
+<% end %>
+
+</div>

@@ -1,12 +1,12 @@
-<%= simple_form_for(@coin) do |f| %>
+<%= simple_form_for(@junk) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :dateOfPurchase, :label => 'Purchase Date', required: true %>
-    <%= f.input :quantity, :label => 'Quantity (1 to 500)', required: true,  collection: 1..500 %>
-    <%= f.input :name, :label => 'Name/Series', required: true %>
+    <%= f.input :quantity, :label => 'Quantity (1 to 1000)', required: true,  collection: 1..1000 %>
+    <%= f.input :name, :label => 'Denomination', collection: ['Nickel', 'Dime', 'Quarter', 'Half Dollar', 'Dollar'], required: true %>
+    <%= f.input :silverPercentage, :label => 'Silver Percentage', collection: [0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 1.0], required: true %>
     <%= f.input :silverContent, :label => 'Weight (ozt) per Coin', required: true %>
-    <%= f.input :mintYear, :label => 'Mintage Year', required: false %>
     <%= f.input :purchasePrice, :label => 'Purchase Price (USD) per Coin', required: true %>
     <%= f.input :spotAtPurchase, :label => 'Spot Price (USD) at Time of Purchase', required: true %>
     <%= f.input :country, :label => 'Country of Mintage', required: false %>

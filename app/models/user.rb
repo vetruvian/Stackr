@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
     has_many :coins
     has_many :bars
     has_many :rounds
+    has_many :junks
 end

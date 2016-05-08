@@ -4,11 +4,11 @@
   <div class="form-inputs">
     <%= f.input :dateOfPurchase, :label => 'Purchase Date', required: true %>
     <%= f.input :quantity, :label => 'Quantity (1 to 500)', required: true,  collection: 1..500 %>
-    <%= f.input :name, :label => 'Name/Series of Bar', required: true %>
-    <%= f.input :silverContent, :label => 'Silver Content (ozt) per Bar', required: true %>
+    <%= f.input :name, :label => 'Name/Series', required: true %>
+    <%= f.input :silverContent, :label => 'Weight (ozt) per Bar', required: true %>
     <%= f.input :mintYear, :label => 'Mintage Year', required: false %>
-    <%= f.input :purchasePrice, :label => 'Purchase Price per Bar (USD)', required: true %>
-    <%= f.input :spotAtPurchase, :label => 'Spot Price at Time of Purchase (USD)', required: true %>
+    <%= f.input :purchasePrice, :label => 'Purchase Price (USD) per Bar', required: true %>
+    <%= f.input :spotAtPurchase, :label => 'Spot Price (USD) at Time of Purchase', required: true %>
     <%= f.input :serialNumber, :label => 'Serial Number', required: false %>
     <%= f.input :country, :label => 'Country of Mintage', required: false %>
     <%= f.input :condition, :label => 'Condition', required: false %>

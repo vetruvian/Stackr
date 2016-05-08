@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :junks
   resources :rounds
   resources :bars
   resources :coins
