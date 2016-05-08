@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @coin.quantity %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @coin.name %>
+</p>
+
+<p>
+  <strong>Dateofpurchase:</strong>
+  <%= @coin.dateOfPurchase %>
+</p>
+
+<p>
+  <strong>Silvercontent:</strong>
+  <%= @coin.silverContent %>
+</p>
+
+<p>
+  <strong>Mintyear:</strong>
+  <%= @coin.mintYear %>
+</p>
+
+<p>
+  <strong>Purchaseprice:</strong>
+  <%= @coin.purchasePrice %>
+</p>
+
+<p>
+  <strong>Spotatpurchase:</strong>
+  <%= @coin.spotAtPurchase %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @coin.country %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @coin.condition %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @coin.comments %>
+</p>
+
+<%= link_to 'Edit', edit_coin_path(@coin) %> |
+<%= link_to 'Back', coins_path %>

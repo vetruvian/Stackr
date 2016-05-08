@@ -1,0 +1,20 @@
+<%= simple_form_for(@coin) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :quantity, :label => 'Quantity (1 to 500)', required: true, autofocus: true , collection: 1..500 %>
+    <%= f.input :name, :label => 'Name/Series of Coin', required: true, autofocus: true  %>
+    <%= f.input :dateOfPurchase, :label => 'Purchase Date', required: true, autofocus: true %>
+    <%= f.input :silverContent, :label => 'Silver Content (ozt) per Coin', required: true, autofocus: true   %>
+    <%= f.input :mintYear, :label => 'Mintage Year', required: false, autofocus: true %>
+    <%= f.input :purchasePrice, :label => 'Purchase Price per Coin (USD)', required: true, autofocus: true   %>
+    <%= f.input :spotAtPurchase, :label => 'Spot Price at Time of Purchase (USD)', required: true, autofocus: true   %>
+    <%= f.input :country, :label => 'Country of Mintage', required: false, autofocus: true   %>
+    <%= f.input :condition, :label => 'Condition', required: false, autofocus: true  %>
+    <%= f.input :comments, :label => 'Additional Information/Comments', required: false, autofocus: true  %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Stack-It" %>
+  </div>
+<% end %>

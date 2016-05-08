@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :coins
   get 'about', to: 'about#home'
 
   # force devise to use registrations controller
