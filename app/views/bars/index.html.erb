@@ -1,0 +1,44 @@
+<div class="jumbotron">
+
+<h1 style="color:#428DC8">Bar Stack</h1>
+
+<div class="table-responsive">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Purchase Date</th>
+      <th>Quantity</th>
+      <th>Name/Series</th>
+      <th>Silver Content (ozt)</th>
+      <th>Purchase Price</th>
+      <th>Spot at Purchase</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bars.each do |bar| %>
+      <tr>
+        <td><%= bar.dateOfPurchase %></td>
+        <td><%= bar.quantity %></td>
+        <td><%= bar.name %></td>
+        <td><%= bar.silverContent %></td>
+        <td>$ <%= bar.purchasePrice %></td>
+        <td>$ <%= bar.spotAtPurchase %></td>
+        <td><%= link_to 'Info', bar %></td>
+        <td><%= link_to 'Edit', edit_bar_path(bar) %></td>
+        <td><%= link_to 'Remove', bar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<% if current_user %>
+  <%= link_to 'Add Bars(s) to Stack', new_bar_path %>
+<% end %>
+
+</div>

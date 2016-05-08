@@ -1,0 +1,67 @@
+<div class="jumbotron">
+
+<h1 style="color:#428DC8">Item Info</h1>
+
+<p id="notice"><%= notice %></p>
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><strong>Purchase Date:</strong></td>
+        <td><%= @bar.dateOfPurchase %></td>
+      </tr>
+      <tr>
+        <td><strong>Quantity:</strong></td>
+        <td><%= @bar.quantity %></td>
+      </tr>
+      <tr>
+        <td><strong>Name/Series:</strong></td>
+        <td><%= @bar.name %></td>
+      </tr>
+      <tr>
+        <td><strong>Silver Content (ozt):</strong></td>
+        <td><%= @bar.silverContent %></td>
+      </tr>
+      <tr>
+        <td><strong>Mintage Year:</strong></td>
+        <td><%= @bar.mintYear %></td>
+      </tr>
+      <tr>
+        <td><strong>Purchase Price:</strong></td>
+        <td>$ <%= @bar.purchasePrice %></td>
+      </tr>
+      <tr>
+        <td><strong>Spot at Purchase:</strong></td>
+        <td>$ <%= @bar.spotAtPurchase %></td>
+      </tr>
+      <tr>
+        <td><strong>Country of Mintage:</strong></td>
+        <td><%= @bar.country %></td>
+      </tr>
+      <tr>
+        <td><strong>Condition:</strong></td>
+        <td><%= @bar.condition %></td>
+      </tr>
+      <tr>
+        <td><strong>Additional Info/Comments:</strong></td>
+        <td><%= @bar.comments %></td>
+      </tr>
+
+  </tbody>
+</table>
+
+
+<%= link_to 'Edit', edit_bar_path(@bar) %> |
+<%= link_to 'Back', bars_path %>
+
+</div>

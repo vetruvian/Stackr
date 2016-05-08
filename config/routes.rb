@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :bars
   resources :coins
   get 'about', to: 'about#home'
 

@@ -1,0 +1,1 @@
+json.extract! @bar, :id, :quantity, :name, :dateOfPurchase, :silverContent, :mintYear, :purchasePrice, :spotAtPurchase, :serialNumber, :country, :condition, :comments, :user_id, :created_at, :updated_at

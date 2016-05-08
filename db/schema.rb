@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160508193012) do
+ActiveRecord::Schema.define(version: 20160508214900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bars", force: :cascade do |t|
+    t.integer  "quantity"
+    t.string   "name"
+    t.date     "dateOfPurchase"
+    t.decimal  "silverContent"
+    t.integer  "mintYear"
+    t.decimal  "purchasePrice"
+    t.decimal  "spotAtPurchase"
+    t.string   "serialNumber"
+    t.string   "country"
+    t.string   "condition"
+    t.string   "comments"
+    t.integer  "user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "coins", force: :cascade do |t|
     t.integer  "quantity"
