@@ -1,4 +1,5 @@
 class CoinsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy ]
   before_action :set_coin, only: [:show, :edit, :update, :destroy]
 
   # GET /coins
@@ -24,7 +25,8 @@ class CoinsController < ApplicationController
   # POST /coins
   # POST /coins.json
   def create
-    @coin = Coin.new(coin_params)
+    # @coin = Coin.new(coin_params)
+    @coin = current_user.coins.new(coin_params)
 
     respond_to do |format|
       if @coin.save

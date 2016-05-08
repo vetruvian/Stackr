@@ -1,54 +1,67 @@
+<div class="jumbotron">
+
+<h1 style="color:#428DC8">Item Info</h1>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @coin.quantity %>
-</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @coin.name %>
-</p>
 
-<p>
-  <strong>Dateofpurchase:</strong>
-  <%= @coin.dateOfPurchase %>
-</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Silvercontent:</strong>
-  <%= @coin.silverContent %>
-</p>
+  <tbody>
+      <tr>
+        <td><strong>Purchase Date:</strong></td>
+        <td><%= @coin.dateOfPurchase %></td>
+      </tr>
+      <tr>
+        <td><strong>Quantity:</strong></td>
+        <td><%= @coin.quantity %></td>
+      </tr>
+      <tr>
+        <td><strong>Name/Series:</strong></td>
+        <td><%= @coin.name %></td>
+      </tr>
+      <tr>
+        <td><strong>Silver Content (ozt):</strong></td>
+        <td><%= @coin.silverContent %></td>
+      </tr>
+      <tr>
+        <td><strong>Mintage Year:</strong></td>
+        <td><%= @coin.mintYear %></td>
+      </tr>
+      <tr>
+        <td><strong>Purchase Price:</strong></td>
+        <td>$ <%= @coin.purchasePrice %></td>
+      </tr>
+      <tr>
+        <td><strong>Spot at Purchase:</strong></td>
+        <td>$ <%= @coin.spotAtPurchase %></td>
+      </tr>
+      <tr>
+        <td><strong>Country of Mintage:</strong></td>
+        <td><%= @coin.country %></td>
+      </tr>
+      <tr>
+        <td><strong>Condition:</strong></td>
+        <td><%= @coin.condition %></td>
+      </tr>
+      <tr>
+        <td><strong>Additional Info/Comments:</strong></td>
+        <td><%= @coin.comments %></td>
+      </tr>
 
-<p>
-  <strong>Mintyear:</strong>
-  <%= @coin.mintYear %>
-</p>
+  </tbody>
+</table>
 
-<p>
-  <strong>Purchaseprice:</strong>
-  <%= @coin.purchasePrice %>
-</p>
-
-<p>
-  <strong>Spotatpurchase:</strong>
-  <%= @coin.spotAtPurchase %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @coin.country %>
-</p>
-
-<p>
-  <strong>Condition:</strong>
-  <%= @coin.condition %>
-</p>
-
-<p>
-  <strong>Comments:</strong>
-  <%= @coin.comments %>
-</p>
 
 <%= link_to 'Edit', edit_coin_path(@coin) %> |
 <%= link_to 'Back', coins_path %>
+
+</div>

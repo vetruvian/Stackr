@@ -1,20 +1,18 @@
 <div class="jumbotron">
 
-<h1>Coin Stack</h1>
+<h1 style="color:#428DC8">Coin Stack</h1>
 
-<table>
+<div class="table-responsive">
+
+<table class="table">
   <thead>
     <tr>
+      <th>Purchase Date</th>
       <th>Quantity</th>
-      <th>Name</th>
-      <th>Dateofpurchase</th>
-      <th>Silvercontent</th>
-      <th>Mintyear</th>
-      <th>Purchaseprice</th>
-      <th>Spotatpurchase</th>
-      <th>Country</th>
-      <th>Condition</th>
-      <th>Comments</th>
+      <th>Name/Series</th>
+      <th>Silver Content (ozt)</th>
+      <th>Purchase Price</th>
+      <th>Spot at Purchase</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,26 +20,25 @@
   <tbody>
     <% @coins.each do |coin| %>
       <tr>
+        <td><%= coin.dateOfPurchase %></td>
         <td><%= coin.quantity %></td>
         <td><%= coin.name %></td>
-        <td><%= coin.dateOfPurchase %></td>
         <td><%= coin.silverContent %></td>
-        <td><%= coin.mintYear %></td>
-        <td><%= coin.purchasePrice %></td>
-        <td><%= coin.spotAtPurchase %></td>
-        <td><%= coin.country %></td>
-        <td><%= coin.condition %></td>
-        <td><%= coin.comments %></td>
-        <td><%= link_to 'Show', coin %></td>
+        <td>$ <%= coin.purchasePrice %></td>
+        <td>$ <%= coin.spotAtPurchase %></td>
+        <td><%= link_to 'Info', coin %></td>
         <td><%= link_to 'Edit', edit_coin_path(coin) %></td>
-        <td><%= link_to 'Destroy', coin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', coin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 
-<%= link_to 'New Coin', new_coin_path %>
+<% if current_user %>
+  <%= link_to 'Add Coin(s) to Stack', new_coin_path %>
+<% end %>
 
 </div>
