@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quantity: 1
+  name: MyString
+  dateOfPurchase: 2016-05-08
+  silverContent: 9.99
+  mintYear: 1
+  purchasePrice: 9.99
+  spotAtPurchase: 9.99
+  serialNumber: MyString
+  country: MyString
+  condition: MyString
+  comments: MyString
+
+two:
+  quantity: 1
+  name: MyString
+  dateOfPurchase: 2016-05-08
+  silverContent: 9.99
+  mintYear: 1
+  purchasePrice: 9.99
+  spotAtPurchase: 9.99
+  serialNumber: MyString
+  country: MyString
+  condition: MyString
+  comments: MyString
