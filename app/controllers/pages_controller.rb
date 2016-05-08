@@ -9,7 +9,12 @@ class PagesController < ApplicationController
 
   def dashboard
   	@user = current_user
+  	@stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
+
+  
+
+
 
 end
 

@@ -50,3 +50,4 @@ gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'devise'
 gem 'rails_12factor', group: :production
+gem 'stock_quote'
