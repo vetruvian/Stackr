@@ -52,3 +52,4 @@ gem 'devise'
 gem 'rails_12factor', group: :production
 gem 'stock_quote'
 gem 'country_select'
+gem 'yahoo-finance'
