@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quantity: 1
+  name: MyString
+  description: MyString
+  dateOfPurchase: 2016-05-08
+  silverContent: 9.99
+  purchasePrice: 9.99
+  spotAtPurchase: 9.99
+  comments: MyString
+  user_id: 1
+
+two:
+  quantity: 1
+  name: MyString
+  description: MyString
+  dateOfPurchase: 2016-05-08
+  silverContent: 9.99
+  purchasePrice: 9.99
+  spotAtPurchase: 9.99
+  comments: MyString
+  user_id: 1

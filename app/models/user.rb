@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
     has_many :bars
     has_many :rounds
     has_many :junks
+    has_many :others
 end

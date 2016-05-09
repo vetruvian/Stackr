@@ -10,7 +10,6 @@
       </button>
       <!-- Logo and Brand Icon -->
       <a class="navbar-brand" style="color:#428DC8; font-weight:bold;"><i class="fa fa-cubes" style="color:#000000"></i> Stackr</a>
-
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -20,10 +19,36 @@
         
         <% if current_user %>
           <li><%= link_to 'dashboard', dashboard_path %> </li>
-          <li><%= link_to 'coins', coins_path %></li>
-          <li><%= link_to 'bars', bars_path %></li>
-          <li><%= link_to 'rounds', rounds_path %></li>
-          <li><%= link_to 'junk', junks_path %></li>
+
+          <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">view <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'coins', coins_path %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to 'bars', bars_path %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to 'rounds', rounds_path %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to 'junk', junks_path %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to 'other', others_path %></li>
+              </ul>
+          </li>
+
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">stack new <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'coins', new_coin_path %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to 'bars', new_bar_path %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to 'rounds', new_round_path %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to 'junk', new_junk_path %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to 'other', new_other_path %></li>
+              </ul>
+          </li>
         <% else %>
 
         <% end %>

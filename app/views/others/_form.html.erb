@@ -1,0 +1,18 @@
+<%= simple_form_for(@other) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :dateOfPurchase, :label => 'Purchase Date', required: true %>
+    <%= f.input :quantity, :label => 'Quantity (1 to 1000)', required: true,  collection: 1..1000 %>
+    <%= f.input :name, :label => 'Name/Series', required: true %>
+    <%= f.input :description, :label => 'Description', required: false %>
+    <%= f.input :silverContent, :label => 'Weight (ozt) per Item', required: true %>
+    <%= f.input :purchasePrice, :label => 'Purchase Price (USD) per Item', required: true %>
+    <%= f.input :spotAtPurchase, :label => 'Spot Price (USD) at Time of Purchase', required: true %>
+    <%= f.input :comments, :label => 'Additional Information/Comments', required: false %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Stack-It", class: 'btn btn-primary btn-md' %>
+  </div>
+<% end %>

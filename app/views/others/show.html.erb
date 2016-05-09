@@ -1,0 +1,60 @@
+<div class="jumbotron">
+
+<h1 style="color:#428DC8">Item Info</h1>
+
+<p id="notice"><%= notice %></p>
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><strong>Purchase Date:</strong></td>
+        <td><%= @other.dateOfPurchase %></td>
+      </tr>
+      <tr>
+        <td><strong>Quantity:</strong></td>
+        <td><%= @other.quantity %></td>
+      </tr>
+      <tr>
+        <td><strong>Name/Series:</strong></td>
+        <td><%= @other.name %></td>
+      </tr>
+      <tr>
+        <td><strong>Description:</strong></td>
+        <td><%= @other.description %></td>
+      </tr>
+      <tr>
+        <td><strong>Weight (ozt):</strong></td>
+        <td><%= @other.silverContent %></td>
+      </tr>
+
+      <tr>
+        <td><strong>Purchase Price:</strong></td>
+        <td>$ <%= @other.purchasePrice %></td>
+      </tr>
+      <tr>
+        <td><strong>Spot at Purchase:</strong></td>
+        <td>$ <%= @other.spotAtPurchase %></td>
+      </tr>
+      <tr>
+        <td><strong>Additional Info/Comments:</strong></td>
+        <td><%= @other.comments %></td>
+      </tr>
+
+  </tbody>
+</table>
+
+
+<%= link_to 'Edit', edit_other_path(@other) %> |
+<%= link_to 'Back', others_path %>
+
+</div>
