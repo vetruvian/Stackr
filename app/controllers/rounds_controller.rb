@@ -29,7 +29,7 @@ class RoundsController < ApplicationController
 
     respond_to do |format|
       if @round.save
-        format.html { redirect_to @round, notice: 'Round was successfully created.' }
+        format.html { redirect_to @round, notice: 'Round(s) successfully added to stack!' }
         format.json { render :show, status: :created, location: @round }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class RoundsController < ApplicationController
   def update
     respond_to do |format|
       if @round.update(round_params)
-        format.html { redirect_to @round, notice: 'Round was successfully updated.' }
+        format.html { redirect_to @round, notice: 'Round(s) successfully updated!' }
         format.json { render :show, status: :ok, location: @round }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class RoundsController < ApplicationController
   def destroy
     @round.destroy
     respond_to do |format|
-      format.html { redirect_to rounds_url, notice: 'Round was successfully destroyed.' }
+      format.html { redirect_to rounds_url, notice: 'Round(s) successfully removed!' }
       format.json { head :no_content }
     end
   end

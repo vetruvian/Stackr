@@ -29,7 +29,7 @@ class BarsController < ApplicationController
 
     respond_to do |format|
       if @bar.save
-        format.html { redirect_to @bar, notice: 'Bar was successfully created.' }
+        format.html { redirect_to @bar, notice: 'Bar(s) successfully added to stack!.' }
         format.json { render :show, status: :created, location: @bar }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class BarsController < ApplicationController
   def update
     respond_to do |format|
       if @bar.update(bar_params)
-        format.html { redirect_to @bar, notice: 'Bar was successfully updated.' }
+        format.html { redirect_to @bar, notice: 'Bar(s) successfully updated!' }
         format.json { render :show, status: :ok, location: @bar }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class BarsController < ApplicationController
   def destroy
     @bar.destroy
     respond_to do |format|
-      format.html { redirect_to bars_url, notice: 'Bar was successfully destroyed.' }
+      format.html { redirect_to bars_url, notice: 'Bar(s) successfully removed!' }
       format.json { head :no_content }
     end
   end

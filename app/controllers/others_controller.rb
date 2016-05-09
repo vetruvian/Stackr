@@ -29,7 +29,7 @@ class OthersController < ApplicationController
 
     respond_to do |format|
       if @other.save
-        format.html { redirect_to @other, notice: 'Other was successfully created.' }
+        format.html { redirect_to @other, notice: 'Other Item(s) successfully added to stack!' }
         format.json { render :show, status: :created, location: @other }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class OthersController < ApplicationController
   def update
     respond_to do |format|
       if @other.update(other_params)
-        format.html { redirect_to @other, notice: 'Other was successfully updated.' }
+        format.html { redirect_to @other, notice: 'Other Item(s) successfully updated!' }
         format.json { render :show, status: :ok, location: @other }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class OthersController < ApplicationController
   def destroy
     @other.destroy
     respond_to do |format|
-      format.html { redirect_to others_url, notice: 'Other was successfully destroyed.' }
+      format.html { redirect_to others_url, notice: 'Other Item(s) successfully removed!' }
       format.json { head :no_content }
     end
   end
