@@ -17,6 +17,12 @@ class Coin < ActiveRecord::Base
 	after_save :calculate_total_coins
 	after_save :calculate_total_coin_weight
 
+	after_destroy :calculate_total_coins
+	after_destroy :calculate_total_coin_weight
+
+	after_update :calculate_total_coins
+	after_update :calculate_total_coin_weight
+
 	def calculate_total_coins
 		a = self.user.total_coins
 		self.user.update_attributes(totalCoins: a)

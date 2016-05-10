@@ -1,37 +1,37 @@
 <div class="jumbotron">
 
-<h1 style="color:#428DC8" >Dashboard</h1>
+<h1 style="color:#428DC8">Dashboard</h1>
 
 <br>
-
-<!-- user info -->
-<h3><%= @user.name %>	</h3>
-
-<br>
-
 
 <div class="row">
 
 	<!-- total stack -->
 	<div class="col-md-6">
 		<div class="classWithPadding">
-		<h3>Total Stack</h3>
+		<h2>Total Stack</h2>
 		<table class="table">
 	    <thead>
 			<tr>
 				<th>Items</th>
 				<th>Weight</th>
-				<th> <!-- actions --> </th>
 			</tr>
 	    </thead>
+	    <tbody>
+			<td><strong><%= @user.totalCoins + @user.totalBars + @user.totalRounds + @user.totalJunks + @user.totalOthers %></strong></td>
+			<td><strong><%= @user.totalCoinWeight + @user.totalBarWeight + @user.totalRoundWeight + @user.totalJunkWeight + @user.totalOtherWeight %> ozt</td>
+	    </tbody>
 		</table>
+
+		<p style="font-size:100%; text-align:right;">.</p>
 	</div>
 	</div>
 
 	<!-- coins -->
 	<div class="col-md-6">
 		<div class="classWithPadding">
-		<h3>Coins</h3>
+		<h2>Coins</h2>
+
 		<table class="table">
 	    <thead>
 			<tr>
@@ -41,11 +41,13 @@
 			</tr>
 	    </thead>
 	    <tbody>
-			<td><%= @user.totalCoins %></td>
-			<td><%= @user.totalCoinWeight %></td>
-			<td><%= link_to "view", coins_path %></td>
+			<td><strong><%= @user.totalCoins %></td>
+			<td><strong><%= @user.totalCoinWeight %> ozt</td>
 	    </tbody>
 		</table>
+
+		<p style="font-size:100%; text-align:right;"><%= link_to "view", coins_path %></p>
+
 	</div>
 	</div>
 
@@ -56,7 +58,7 @@
 	<!-- bars -->
 	<div class="col-md-6">
 		<div class="classWithPadding">
-		<h3>Bars</h3>
+		<h2>Bars</h2>
 		<table class="table">
 	    <thead>
 			<tr>
@@ -66,18 +68,19 @@
 			</tr>
 	    </thead>
 	    <tbody>
-			<td><%= @user.totalBars %></td>
-			<td><%= @user.totalBarWeight %></td>
-			<td><%= link_to "view", bars_path %></td>
+			<td><strong><%= @user.totalBars %></strong></td>
+			<td><strong><%= @user.totalBarWeight %> ozt</strong></td>
 	    </tbody>
 		</table>
+
+		<p style="font-size:100%; text-align:right;"><%= link_to "view", bars_path %></p>
 	</div>
 	</div>
 
 	<!-- rounds -->
 	<div class="col-md-6">
 		<div class="classWithPadding">
-		<h3>Rounds</h3>
+		<h2>Rounds</h2>
 		<table class="table">
 	    <thead>
 			<tr>
@@ -87,11 +90,12 @@
 			</tr>
 	    </thead>
 	    <tbody>
-			<td><%= @user.totalRounds %></td>
-			<td><%= @user.totalRoundWeight %></td>
-			<td><%= link_to "view", rounds_path %></td>
+			<td><strong><%= @user.totalRounds %></strong></td>
+			<td><strong><%= @user.totalRoundWeight %> ozt</strong></td>
 	    </tbody>
 		</table>
+
+		<p style="font-size:100%; text-align:right;"><%= link_to "view", rounds_path %></p>
 	</div>
 	</div>
 
@@ -102,7 +106,7 @@
 	<!-- junk -->
 	<div class="col-md-6">
 		<div class="classWithPadding">
-		<h3>Junk</h3>
+		<h2>Junk</h2>
 		<table class="table">
 	    <thead>
 			<tr>
@@ -112,18 +116,19 @@
 			</tr>
 	    </thead>
 	    <tbody>
-			<td><%= @user.totalJunks %></td>
-			<td><%= @user.totalJunkWeight %></td>
-			<td><%= link_to "view", junks_path %></td>
+			<td><strong><%= @user.totalJunks %></strong></td>
+			<td><strong><%= @user.totalJunkWeight %> ozt</strong></td>
 	    </tbody>
 		</table>
+
+		<p style="font-size:100%; text-align:right;"><%= link_to "view", junks_path %><p>
 	</div>
 	</div>
 
 	<!-- other -->
 	<div class="col-md-6">
 		<div class="classWithPadding">
-		<h3>Other</h3>
+		<h2>Other</h2>
 		<table class="table">
 	    <thead>
 			<tr>
@@ -133,11 +138,12 @@
 			</tr>
 	    </thead>
 	    <tbody>
-			<td><%= @user.totalOthers %></td>
-			<td><%= @user.totalOtherWeight %></td>
-			<td><%= link_to "view", others_path %></td>
+			<td><strong><%= @user.totalOthers %></strong></td>
+			<td><strong><%= @user.totalOtherWeight %> ozt</strong></td>
 	    </tbody>
 		</table>
+
+		<p style="font-size:100%; text-align:right;"><%= link_to "view", others_path %></p>
 	</div>
 	</div>
 

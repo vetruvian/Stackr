@@ -6,20 +6,24 @@ class RoundsController < ApplicationController
   # GET /rounds.json
   def index
     @rounds = Round.all
+    @user = current_user
   end
 
   # GET /rounds/1
   # GET /rounds/1.json
   def show
+    @user = current_user
   end
 
   # GET /rounds/new
   def new
+    @user = current_user
     @round = Round.new
   end
 
   # GET /rounds/1/edit
   def edit
+    @user = current_user
   end
 
   # POST /rounds

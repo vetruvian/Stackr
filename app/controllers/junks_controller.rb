@@ -6,20 +6,24 @@ class JunksController < ApplicationController
   # GET /junks.json
   def index
     @junks = Junk.all
+    @user = current_user
   end
 
   # GET /junks/1
   # GET /junks/1.json
   def show
+    @user = current_user
   end
 
   # GET /junks/new
   def new
     @junk = Junk.new
+    @user = current_user
   end
 
   # GET /junks/1/edit
   def edit
+    @user = current_user
   end
 
   # POST /junks

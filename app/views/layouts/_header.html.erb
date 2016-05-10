@@ -12,12 +12,11 @@
       <a class="navbar-brand" style="color:#428DC8; font-weight:bold;"><i class="fa fa-cubes" style="color:#000000"></i> Stackr<span style="vertical-align: top; font-size: 65%; font-weight: normal; color:#777777;"> (beta)</span></a>
     </div>
 
+    <% if current_user %>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 
-        
-        <% if current_user %>
           <li><%= link_to 'dashboard', dashboard_path %> </li>
 
           <li class="dropdown">
@@ -49,26 +48,40 @@
                 <li><%= link_to 'other', new_other_path %></li>
               </ul>
           </li>
-        <% else %>
-        <% end %>
-
-        
-
-        
-
       </ul>
-
       <!--Right Nav: login/register-->
       <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> <%= @user.name %> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'settings', edit_user_registration_path %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to 'logout', destroy_user_session_path, method: :delete %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to 'about', about_path %></li>
+              </ul>
+          </li>
+    <% else %>
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'about', about_path %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'login', new_user_session_path %></li>
+        <li><%= link_to 'signup', new_user_registration_path %></li>
+      </ul>
+    <% end %>
+
+
+
+
+
+
+
+
+
         
-        <li><%= link_to 'about', about_path %> </li>
-        <% if current_user %>
-          <li><%= link_to 'settings', edit_user_registration_path %> </li>          
-          <li><%= link_to 'logout', destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to 'login', new_user_session_path %></li>
-          <li><%= link_to 'register', new_user_registration_path %></li>
-        <% end %>
+        
+
 
       </ul>
     </div><!-- /.navbar-collapse -->

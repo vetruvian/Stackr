@@ -15,6 +15,12 @@ class Other < ActiveRecord::Base
 	after_save :calculate_total_others
 	after_save :calculate_total_other_weight
 
+	after_destroy :calculate_total_others
+	after_destroy :calculate_total_other_weight
+
+	after_update :calculate_total_others
+	after_update :calculate_total_other_weight
+
 	def calculate_total_others
 		a = self.user.total_others
 		self.user.update_attributes(totalOthers: a)

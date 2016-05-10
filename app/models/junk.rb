@@ -17,6 +17,12 @@ class Junk < ActiveRecord::Base
 	after_save :calculate_total_junks
 	after_save :calculate_total_junk_weight
 
+	after_destroy :calculate_total_junks
+	after_destroy :calculate_total_junk_weight
+
+	after_update :calculate_total_junks
+	after_update :calculate_total_junk_weight
+
 	def calculate_total_junks
 		a = self.user.total_junks
 		self.user.update_attributes(totalJunks: a)

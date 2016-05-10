@@ -18,6 +18,12 @@ class Round < ActiveRecord::Base
 	after_save :calculate_total_rounds
 	after_save :calculate_total_round_weight
 
+	after_destroy :calculate_total_rounds
+	after_destroy :calculate_total_round_weight
+
+	after_update :calculate_total_rounds
+	after_update :calculate_total_round_weight
+
 	def calculate_total_rounds
 		a = self.user.total_rounds
 		self.user.update_attributes(totalRounds: a)

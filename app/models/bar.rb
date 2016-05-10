@@ -18,6 +18,12 @@ class Bar < ActiveRecord::Base
 	after_save :calculate_total_bars
 	after_save :calculate_total_bar_weight
 
+	after_destroy :calculate_total_bars
+	after_destroy :calculate_total_bar_weight
+
+	after_update :calculate_total_bars
+	after_update :calculate_total_bar_weight
+
 	def calculate_total_bars
 		a = self.user.total_bars
 		self.user.update_attributes(totalBars: a)

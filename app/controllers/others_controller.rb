@@ -6,27 +6,30 @@ class OthersController < ApplicationController
   # GET /others.json
   def index
     @others = Other.all
+    @user = current_user
   end
 
   # GET /others/1
   # GET /others/1.json
   def show
+    @user = current_user
   end
 
   # GET /others/new
   def new
     @other = Other.new
+    @user = current_user
   end
 
   # GET /others/1/edit
   def edit
+    @user = current_user
   end
 
   # POST /others
   # POST /others.json
   def create
     @other = current_user.others.new(other_params)
-
     respond_to do |format|
       if @other.save
         format.html { redirect_to @other, notice: 'Other Item(s) successfully added to stack!' }
