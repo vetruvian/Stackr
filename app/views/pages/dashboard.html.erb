@@ -1,6 +1,148 @@
 <div class="jumbotron">
 
-<h1>This is the Dashboard!</h1>
+<h1 style="color:#428DC8" >Dashboard</h1>
+
+<br>
+
+<!-- user info -->
+<h3><%= @user.name %>	</h3>
+
+<br>
+
+
+<div class="row">
+
+	<!-- total stack -->
+	<div class="col-md-6">
+		<div class="classWithPadding">
+		<h3>Total Stack</h3>
+		<table class="table">
+	    <thead>
+			<tr>
+				<th>Items</th>
+				<th>Weight</th>
+				<th> <!-- actions --> </th>
+			</tr>
+	    </thead>
+		</table>
+	</div>
+	</div>
+
+	<!-- coins -->
+	<div class="col-md-6">
+		<div class="classWithPadding">
+		<h3>Coins</h3>
+		<table class="table">
+	    <thead>
+			<tr>
+				<th>Items</th>
+				<th>Weight</th>
+				<th> <!-- actions --> </th>
+			</tr>
+	    </thead>
+	    <tbody>
+			<td><%= @user.totalCoins %></td>
+			<td><%= @user.totalCoinWeight %></td>
+			<td><%= link_to "view", coins_path %></td>
+	    </tbody>
+		</table>
+	</div>
+	</div>
+
+</div>
+
+<div class="row">
+
+	<!-- bars -->
+	<div class="col-md-6">
+		<div class="classWithPadding">
+		<h3>Bars</h3>
+		<table class="table">
+	    <thead>
+			<tr>
+				<th>Items</th>
+				<th>Weight</th>
+				<th> <!-- actions --> </th>
+			</tr>
+	    </thead>
+	    <tbody>
+			<td><%= @user.totalBars %></td>
+			<td><%= @user.totalBarWeight %></td>
+			<td><%= link_to "view", bars_path %></td>
+	    </tbody>
+		</table>
+	</div>
+	</div>
+
+	<!-- rounds -->
+	<div class="col-md-6">
+		<div class="classWithPadding">
+		<h3>Rounds</h3>
+		<table class="table">
+	    <thead>
+			<tr>
+				<th>Items</th>
+				<th>Weight</th>
+				<th> <!-- actions --> </th>
+			</tr>
+	    </thead>
+	    <tbody>
+			<td><%= @user.totalRounds %></td>
+			<td><%= @user.totalRoundWeight %></td>
+			<td><%= link_to "view", rounds_path %></td>
+	    </tbody>
+		</table>
+	</div>
+	</div>
+
+</div>
+
+<div class="row">
+
+	<!-- junk -->
+	<div class="col-md-6">
+		<div class="classWithPadding">
+		<h3>Junk</h3>
+		<table class="table">
+	    <thead>
+			<tr>
+				<th>Items</th>
+				<th>Weight</th>
+				<th> <!-- actions --> </th>
+			</tr>
+	    </thead>
+	    <tbody>
+			<td><%= @user.totalJunks %></td>
+			<td><%= @user.totalJunkWeight %></td>
+			<td><%= link_to "view", junks_path %></td>
+	    </tbody>
+		</table>
+	</div>
+	</div>
+
+	<!-- other -->
+	<div class="col-md-6">
+		<div class="classWithPadding">
+		<h3>Other</h3>
+		<table class="table">
+	    <thead>
+			<tr>
+				<th>Items</th>
+				<th>Weight</th>
+				<th> <!-- actions --> </th>
+			</tr>
+	    </thead>
+	    <tbody>
+			<td><%= @user.totalOthers %></td>
+			<td><%= @user.totalOtherWeight %></td>
+			<td><%= link_to "view", others_path %></td>
+	    </tbody>
+		</table>
+	</div>
+	</div>
+
+</div>
+
 
 
 </div>

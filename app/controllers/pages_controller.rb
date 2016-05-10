@@ -9,7 +9,11 @@ class PagesController < ApplicationController
 
   def dashboard
   	@user = current_user
-  	@stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
+  	@coins = @user.coins
+    @bars = @user.bars
+    @rounds = @user.rounds
+    @junks = @user.junks
+    @others = @user.others
   end
 
   

@@ -50,7 +50,6 @@
               </ul>
           </li>
         <% else %>
-
         <% end %>
 
         
@@ -61,9 +60,7 @@
 
       <!--Right Nav: login/register-->
       <ul class="nav navbar-nav navbar-right">
-        <li>
-            <a class="navbar-header navbar-right" style="color:#000000;">Silver Spot: <span style="color: #428DC8; font-weight:bold;"><%= @stock.bid.inspect %></span></a>
-        </li>
+        
         <li><%= link_to 'about', about_path %> </li>
         <% if current_user %>
           <li><%= link_to 'settings', edit_user_registration_path %> </li>          

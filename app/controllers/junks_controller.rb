@@ -70,6 +70,6 @@ class JunksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def junk_params
-      params.require(:junk).permit(:quantity, :name, :dateOfPurchase, :silverContent, :silverPercentage, :purchasePrice, :spotAtPurchase, :country, :condition, :comments)
+      params.require(:junk).permit(:quantity, :name, :dateOfPurchase, :silverContent, :silverPercentage, :purchasePrice, :spotAtPurchase, :country, :condition, :comments, :entryWeight)
     end
 end

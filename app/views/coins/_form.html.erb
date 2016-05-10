@@ -6,12 +6,14 @@
     <%= f.input :quantity, :label => 'Quantity (1 to 500)', required: true,  collection: 1..500 %>
     <%= f.input :name, :label => 'Name/Series', required: true %>
     <%= f.input :silverContent, :label => 'Weight (ozt) per Coin', required: true %>
+    <%= f.input :entryWeight, :label => 'Total Weight (ozt)', required: true %>
     <%= f.input :mintYear, :label => 'Mintage Year', required: false %>
     <%= f.input :purchasePrice, :label => 'Purchase Price (USD) per Coin', required: true %>
     <%= f.input :spotAtPurchase, :label => 'Spot Price (USD) at Time of Purchase', required: true %>
     <%= f.input :country, :label => 'Country of Mintage', required: false %>
     <%= f.input :condition, :label => 'Condition', required: false %>
     <%= f.input :comments, :label => 'Additional Information/Comments', required: false %>
+
   </div>
 
   <div class="form-actions">

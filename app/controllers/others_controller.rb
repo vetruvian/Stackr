@@ -70,6 +70,6 @@ class OthersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def other_params
-      params.require(:other).permit(:quantity, :name, :description, :dateOfPurchase, :silverContent, :purchasePrice, :spotAtPurchase, :comments)
+      params.require(:other).permit(:quantity, :name, :description, :dateOfPurchase, :silverContent, :purchasePrice, :spotAtPurchase, :comments, :entryWeight)
     end
 end

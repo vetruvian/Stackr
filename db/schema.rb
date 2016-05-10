@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160508234552) do
+ActiveRecord::Schema.define(version: 20160510024510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(version: 20160508234552) do
     t.integer  "user_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.decimal  "entryweight"
+    t.decimal  "totalWeight"
+    t.integer  "totalQuantity"
   end
 
   create_table "coins", force: :cascade do |t|
@@ -48,6 +51,9 @@ ActiveRecord::Schema.define(version: 20160508234552) do
     t.datetime "updated_at",     null: false
     t.integer  "userId"
     t.integer  "user_id"
+    t.decimal  "entryWeight"
+    t.decimal  "totalWeight"
+    t.integer  "totalQuantity"
   end
 
   create_table "junks", force: :cascade do |t|
@@ -64,6 +70,9 @@ ActiveRecord::Schema.define(version: 20160508234552) do
     t.integer  "user_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.decimal  "entryWeight"
+    t.decimal  "totalWeight"
+    t.integer  "totalQuantity"
   end
 
   create_table "others", force: :cascade do |t|
@@ -78,6 +87,9 @@ ActiveRecord::Schema.define(version: 20160508234552) do
     t.integer  "user_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.decimal  "entryWeight"
+    t.decimal  "totalWeight"
+    t.integer  "totalQuantity"
   end
 
   create_table "rounds", force: :cascade do |t|
@@ -95,6 +107,9 @@ ActiveRecord::Schema.define(version: 20160508234552) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "user_id"
+    t.decimal  "entryWeight"
+    t.decimal  "totalWeight"
+    t.integer  "totalQuantity"
   end
 
   create_table "users", force: :cascade do |t|
@@ -111,6 +126,18 @@ ActiveRecord::Schema.define(version: 20160508234552) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name"
+    t.integer  "totalCoins"
+    t.decimal  "totalCoinWeight"
+    t.integer  "totalBars"
+    t.decimal  "totalBarWeight"
+    t.integer  "totalRounds"
+    t.decimal  "totalRoundWeight"
+    t.integer  "totalJunks"
+    t.decimal  "totalJunkWeight"
+    t.integer  "totalOthers"
+    t.decimal  "totalOtherWeight"
+    t.integer  "totalItems"
+    t.decimal  "totalStackWeight"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
