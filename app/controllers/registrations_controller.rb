@@ -10,4 +10,9 @@ class RegistrationsController < Devise::RegistrationsController
 		params.require(:user).permit(:name, :email, :password, :current_password)
 	end
 
+	def edit
+    @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
+  end
+
 end
