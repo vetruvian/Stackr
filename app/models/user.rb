@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
     has_many :others
 
 
+
     # Calculate Total Coins
     def total_coins
       self.coins.sum(:quantity)
@@ -66,5 +67,6 @@ class User < ActiveRecord::Base
     def total_other_weight
       self.others.sum(:entryWeight)
     end
+
 
 end

@@ -6,27 +6,6 @@
 
 <div class="row">
 
-	<!-- total stack -->
-	<div class="col-md-6">
-		<div class="classWithPadding">
-		<h2>Total Stack</h2>
-		<table class="table">
-	    <thead>
-			<tr>
-				<th>Items</th>
-				<th>Weight</th>
-			</tr>
-	    </thead>
-	    <tbody>
-			<td><strong><%= @user.totalCoins + @user.totalBars + @user.totalRounds + @user.totalJunks + @user.totalOthers %></strong></td>
-			<td><strong><%= @user.totalCoinWeight + @user.totalBarWeight + @user.totalRoundWeight + @user.totalJunkWeight + @user.totalOtherWeight %> ozt</td>
-	    </tbody>
-		</table>
-
-		<p style="font-size:100%; text-align:right;">.</p>
-	</div>
-	</div>
-
 	<!-- coins -->
 	<div class="col-md-6">
 		<div class="classWithPadding">
@@ -41,8 +20,13 @@
 			</tr>
 	    </thead>
 	    <tbody>
-			<td><strong><%= @user.totalCoins %></td>
-			<td><strong><%= @user.totalCoinWeight %> ozt</td>
+	    	<% if @user.totalCoins != nil && @user.totalCoinWeight != nil %>
+				<td><strong><%= @user.totalCoins %></td>
+				<td><strong><%= @user.totalCoinWeight %> ozt</td>
+			<% else %>
+				<td><strong>0</td>
+				<td><strong>0.0 ozt</td>
+			<% end %>
 	    </tbody>
 		</table>
 
@@ -50,10 +34,6 @@
 
 	</div>
 	</div>
-
-</div>
-
-<div class="row">
 
 	<!-- bars -->
 	<div class="col-md-6">
@@ -68,14 +48,23 @@
 			</tr>
 	    </thead>
 	    <tbody>
-			<td><strong><%= @user.totalBars %></strong></td>
-			<td><strong><%= @user.totalBarWeight %> ozt</strong></td>
+			<% if @user.totalBars != nil && @user.totalBarWeight != nil %>
+				<td><strong><%= @user.totalBars %></td>
+				<td><strong><%= @user.totalBarWeight %> ozt</td>
+			<% else %>
+				<td><strong>0</td>
+				<td><strong>0.0 ozt</td>
+			<% end %>
 	    </tbody>
 		</table>
 
 		<p style="font-size:100%; text-align:right;"><%= link_to "view", bars_path %></p>
 	</div>
 	</div>
+
+</div>
+
+<div class="row">
 
 	<!-- rounds -->
 	<div class="col-md-6">
@@ -90,18 +79,19 @@
 			</tr>
 	    </thead>
 	    <tbody>
-			<td><strong><%= @user.totalRounds %></strong></td>
-			<td><strong><%= @user.totalRoundWeight %> ozt</strong></td>
+			<% if @user.totalRounds != nil && @user.totalRoundWeight != nil %>
+				<td><strong><%= @user.totalRounds %></td>
+				<td><strong><%= @user.totalRoundWeight %> ozt</td>
+			<% else %>
+				<td><strong>0</td>
+				<td><strong>0.0 ozt</td>
+			<% end %>
 	    </tbody>
 		</table>
 
 		<p style="font-size:100%; text-align:right;"><%= link_to "view", rounds_path %></p>
 	</div>
 	</div>
-
-</div>
-
-<div class="row">
 
 	<!-- junk -->
 	<div class="col-md-6">
@@ -116,14 +106,23 @@
 			</tr>
 	    </thead>
 	    <tbody>
-			<td><strong><%= @user.totalJunks %></strong></td>
-			<td><strong><%= @user.totalJunkWeight %> ozt</strong></td>
+			<% if @user.totalJunks != nil && @user.totalJunkWeight != nil %>
+				<td><strong><%= @user.totalJunks %></td>
+				<td><strong><%= @user.totalJunkWeight %> ozt</td>
+			<% else %>
+				<td><strong>0</td>
+				<td><strong>0.0 ozt</td>
+			<% end %>
 	    </tbody>
 		</table>
 
 		<p style="font-size:100%; text-align:right;"><%= link_to "view", junks_path %><p>
 	</div>
 	</div>
+
+</div>
+
+<div class="row">
 
 	<!-- other -->
 	<div class="col-md-6">
@@ -138,8 +137,13 @@
 			</tr>
 	    </thead>
 	    <tbody>
-			<td><strong><%= @user.totalOthers %></strong></td>
-			<td><strong><%= @user.totalOtherWeight %> ozt</strong></td>
+			<% if @user.totalOthers != nil && @user.totalOtherWeight != nil %>
+				<td><strong><%= @user.totalOthers %></td>
+				<td><strong><%= @user.totalOtherWeight %> ozt</td>
+			<% else %>
+				<td><strong>0</td>
+				<td><strong>0.0 ozt</td>
+			<% end %>
 	    </tbody>
 		</table>
 
