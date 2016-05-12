@@ -7,23 +7,27 @@ class RoundsController < ApplicationController
   def index
     @rounds = Round.all
     @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
 
   # GET /rounds/1
   # GET /rounds/1.json
   def show
     @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
 
   # GET /rounds/new
   def new
     @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
     @round = Round.new
   end
 
   # GET /rounds/1/edit
   def edit
     @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
 
   # POST /rounds

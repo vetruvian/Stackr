@@ -7,23 +7,27 @@ class OthersController < ApplicationController
   def index
     @others = Other.all
     @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
 
   # GET /others/1
   # GET /others/1.json
   def show
     @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
 
   # GET /others/new
   def new
     @other = Other.new
     @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
 
   # GET /others/1/edit
   def edit
     @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
 
   # POST /others

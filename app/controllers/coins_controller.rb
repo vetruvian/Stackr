@@ -7,23 +7,27 @@ class CoinsController < ApplicationController
   def index
     @coins = Coin.all
     @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
 
   # GET /coins/1
   # GET /coins/1.json
   def show
     @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
 
   # GET /coins/new
   def new
     @coin = Coin.new
     @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
 
   # GET /coins/1/edit
   def edit
     @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
 
   # POST /coins

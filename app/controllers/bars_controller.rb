@@ -7,23 +7,27 @@ class BarsController < ApplicationController
   def index
     @bars = Bar.all
     @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
 
   # GET /bars/1
   # GET /bars/1.json
   def show
     @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
 
   # GET /bars/new
   def new
     @bar = Bar.new
     @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
 
   # GET /bars/1/edit
   def edit
     @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
 
   # POST /bars

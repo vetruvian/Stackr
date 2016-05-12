@@ -14,6 +14,7 @@ class PagesController < ApplicationController
     @rounds = @user.rounds
     @junks = @user.junks
     @others = @user.others
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
 
   

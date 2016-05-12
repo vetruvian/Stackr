@@ -10,7 +10,4 @@ class RegistrationsController < Devise::RegistrationsController
 		params.require(:user).permit(:name, :email, :password, :current_password)
 	end
 
-	def set_totals
-	end
-
 end

@@ -7,23 +7,27 @@ class JunksController < ApplicationController
   def index
     @junks = Junk.all
     @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
 
   # GET /junks/1
   # GET /junks/1.json
   def show
     @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
 
   # GET /junks/new
   def new
     @junk = Junk.new
     @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
 
   # GET /junks/1/edit
   def edit
     @user = current_user
+    @stock = StockQuote::Stock.quote('XAGUSD=X', nil, nil, ['Symbol', 'Ask', 'Bid'])
   end
 
   # POST /junks
